@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Mi sitio Flask{% endblock %}</title>
+  <!-- Si tienes un archivo CSS, descomenta la línea de abajo y asegúrate de que exista en la carpeta static/ -->
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="{{ url_for('index') }}">Inicio</a>
+      <a href="{{ url_for('about') }}">Acerca de</a>
+      <a href="{{ url_for('contact') }}">Contacto</a>
+      <a href="{{ url_for('show_form') }}">Formulario</a>
+      
+    </nav>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <small>© {{ 2025 }} Derechos de autor</small>
+  </footer>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
